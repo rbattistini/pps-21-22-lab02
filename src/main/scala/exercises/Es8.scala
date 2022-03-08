@@ -24,8 +24,7 @@ object Es8 extends App:
       case _ => None()
 
     def map[A](opt: Option[A])(p: A => Boolean): Option[Boolean] = opt match
-      case Some(a) if p(a) => Some(true)
-      case Some(a) if !p(a) => Some(false)
+      case Some(a) => Some(p(a))
       case _ => None()
 
     def map2[A](optA: Option[A], optB: Option[A])(f: (A, A) => A): Option[A] = (optA, optB) match
