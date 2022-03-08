@@ -1,3 +1,5 @@
+package exercises
+
 object BinaryTrees:
 
   enum Tree[A]:
@@ -18,22 +20,21 @@ object BinaryTrees:
     def count[A](t: Tree[A], elem: A): Int =
       fold(t)(x => if x == elem then 1 else 0)(_ + _)
 
-
-class BinaryTreeTest:
-  import org.junit.Assert.*
-  import org.junit.Test
-  import BinaryTrees.Tree.*
-
-  val tree: BinaryTrees.Tree[Int] = Branch(Branch(Leaf(1), Leaf(2)), Leaf(1))
-
-  @Test def testCount(): Unit =
-    assertEquals(2, count(tree, 1))
-    assertEquals(1, count(tree, 2))
-    assertEquals(0, count(tree, 3))
-
-  @Test def testSize(): Unit =
-    assertEquals(3, size(tree))
-
-  @Test def testFind(): Unit =
-    assertTrue(find(tree, 2))
-    assertFalse(find(tree, 4))
+  class BinaryTreeTest:
+    import Tree.*
+    import org.junit.Assert.*
+    import org.junit.Test
+  
+    val tree: Tree[Int] = Branch(Branch(Leaf(1), Leaf(2)), Leaf(1))
+  
+    @Test def testCount(): Unit =
+      assertEquals(2, count(tree, 1))
+      assertEquals(1, count(tree, 2))
+      assertEquals(0, count(tree, 3))
+  
+    @Test def testSize(): Unit =
+      assertEquals(3, size(tree))
+  
+    @Test def testFind(): Unit =
+      assertTrue(find(tree, 2))
+      assertFalse(find(tree, 4))
