@@ -5,6 +5,7 @@ out/
 .idea/shelf
 .scalafmt.conf
 
+.bsp
 ist/*
 target/
 lib_managed/
