@@ -4,3 +4,13 @@ out/
 .idea/tasks.xml
 .idea/shelf
 .scalafmt.conf
+
+ist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+.history
+.cache
+.lib/
