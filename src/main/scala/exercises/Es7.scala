@@ -1,8 +1,9 @@
 package exercises
 
-object Es7 extends App:
-  import scala.math.{Pi, pow}
+import scala.math.{Pi, pow}
 
+object Es7 extends App:
+  
   enum Shape:
     case Rectangle(b: Double, h: Double)
     case Circle(r: Double)
