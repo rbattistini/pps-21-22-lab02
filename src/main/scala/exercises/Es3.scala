@@ -2,12 +2,16 @@ package exercises
 
 object Es3 extends App:
   // --- 3a ---
-  val isEvenLambda: Int => String = (i: Int) => if (i % 2 == 0) "even" else "odd"
+  val isEvenLambda: Int => String = i => i match
+    case i if i % 2 == 0 => "even"
+    case _ => "odd"
   
   isEvenLambda(2)
   isEvenLambda(3)
   
-  def isEven(i: Int): String = if (i % 2 == 0) "even" else "odd"
+  def isEven(i: Int): String = i match
+    case i if i % 2 == 0 => "even"
+    case _ => "odd"
   
   isEven(2)
   isEven(3)
