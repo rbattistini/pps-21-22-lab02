@@ -28,5 +28,5 @@ object Es8 extends App:
       case _ => None()
 
     def map2[A](optA: Option[A], optB: Option[A])(f: (A, A) => A): Option[A] = (optA, optB) match
-      case (Some(a), Some(b)) if !isEmpty(optA) && !isEmpty(optB) => Some(f(a, b))
+      case (Some(a), Some(b)) => Some(f(a, b))
       case (_, _) => None()
